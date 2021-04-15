@@ -18,7 +18,7 @@
         <h1 class="visually-hidden">Заказ доставки в интернет-магазине</h1>
         <div class="tabs-block">
           <h2>Выберите способ получения товара</h2>
-          <input id="tab-pick-up" type="radio" name="tab" checked/>
+          <input id="tab-pick-up" type="radio" name="tab" checked>
           <label for="tab-pick-up">
             <span>Самовывоз</span>
             <svg width="288" height="78" viewBox="0 0 288 78" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +29,7 @@
               />
             </svg>
           </label>
-          <input id="tab-delivery" type="radio" name="tab" />
+          <input id="tab-delivery" type="radio" name="tab">
           <label for="tab-delivery" class="delivery-type">
             <span>Доставка курьером</span>
             <svg width="288" height="78" viewBox="0 0 288 78" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,28 +47,22 @@
               <h3 class="tabs-block__form-title fade" data-category="tab-delivery">Доставка</h3>
               <div class="input-wrapper input-wrapper--radio-group">
                 <h4>Город</h4>
-                <input id="delivery-led" type="radio" name="city" value="lED" checked />
-                <label for="delivery-led">Санкт-Петербург</label>
-                <input id="delivery-mow" type="radio" name="city" value="mow" />
-                <label for="delivery-mow">Москва</label>
-                <input id="delivery-goj" type="radio" name="city" value="goj" />
-                <label for="delivery-goj">Нижний Новгород</label>
-                <input id="delivery-krr" type="radio" name="city" value="krr" />
-                <label for="delivery-krr">Краснодар</label>
+                <div class="cities-group-wrapper"></div>
+                <template id="cities-group">
+                  <input id="" type="radio" name="city" value="" />
+                  <label for=""></label>
+                </template>
               </div>
               <div class="tabs-block__form-info -active" data-category="tab-pick-up">
                 <div class="input-wrapper input-wrapper--radio-group">
                   <h4>Адрес пункта выдачи заказов</h4>
-                  <input id="pick-up-led-address-1" type="radio" name="led-address" value="Ленина, 10" checked />
-                  <label for="pick-up-led-address-1">Ленина, 10</label>
-                  <input id="pick-up-led-address-2" type="radio" name="led-address" value="Сталина, 20" />
-                  <label for="pick-up-led-address-2">Сталина, 20</label>
-                  <input id="pick-up-led-address-3" type="radio" name="led-address" value="Хрущёва, 30" />
-                  <label for="pick-up-led-address-3">Хрущёва, 30</label>
-                  <input id="pick-up-led-address-4" type="radio" name="led-address" value="Брежнева, 40" />
-                  <label for="pick-up-led-address-4">Брежнева, 40</label>
-                  <input id="pick-up-led-address-5" type="radio" name="led-address" value="Андропова, 50" />
-                  <label for="pick-up-led-address-5">Андропова, 50</label>
+                  <div class="address-group-wrapper"></div>
+                  <template id="address-group">
+                    <div class="address-group" data-city="">
+                      <input id="" type="radio" name="" value=""/>
+                      <label for="" ></label>
+                    </div>
+                  </template>
                 </div>
                 <div class="map"></div>
               </div>
@@ -150,6 +144,9 @@
         </div>
       </main>
     </div>
+    <script src="./js/backend.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/address.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

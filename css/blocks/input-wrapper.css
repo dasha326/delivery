@@ -152,17 +152,14 @@
 
 .input-wrapper--radio-group label:active {
   color: var(--color-text-white);
-
   background: var(--color-radio-checked-hover);
 }
-
-.input-wrapper--radio-group label:first-of-type {
+.address-group.-first label, .cities-group-wrapper label:first-of-type  {
   border-radius: 22px 0 0 22px;
 }
 
-.input-wrapper--radio-group label:last-of-type {
+.address-group.-last label, .cities-group-wrapper label:last-of-type {
   margin-right: 0;
-
   border-radius: 0 22px 22px 0;
 }
 
@@ -172,4 +169,10 @@
 
 .input-wrapper--payment-method {
   margin-bottom: 29px;
+}
+.address-group:not(.-visible) {
+  display: none;
+}
+.address-group.-visible {
+  display: inline-block;
 }

@@ -142,6 +142,10 @@
     fill: var(--color-text-white);
 }
 
+.tabs-block > input:focus + label {
+    box-shadow: 0 4px 4px 0 rgba(0,0,0, .4);
+}
+
 @keyframes fadeOut {
     from {
         opacity: 0;
