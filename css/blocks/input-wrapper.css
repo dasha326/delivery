@@ -132,11 +132,12 @@
 
 .input-wrapper--radio-group label {
   margin-right: 3px;
-  padding: 12px 24px;
-
+  padding: 12px 17px;
   background: var(--color-radio-base);
   cursor: pointer;
-
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
   transition: background var(--transition-base), color var(--transition-base);
 }
 

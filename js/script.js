@@ -6,13 +6,8 @@
     tabs.forEach(function(element) {
         element.addEventListener('click', function() {
             const thisId = this.id;
-            window.loadData();
             contents.forEach(function(element) {
-                if(element.dataset.category === thisId) {
-                    element.classList.add('-active');
-                } else {
-                    element.classList.remove('-active');
-                }
+                window.util.activeClassHandlerByDataset(element, thisId, element.dataset.category, '-active');
             })
         });
     });

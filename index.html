@@ -42,7 +42,7 @@
           </label>
           <section class="form">
             <h2 class="visually-hidden">Форма самовывоза</h2>
-            <form action="#" method="POST" class="tabs-block__form">
+            <form action="#" method="POST" class="tabs-block__form" >
               <h3 class="tabs-block__form-title fade -active" data-category="tab-pick-up">Самовывоз</h3>
               <h3 class="tabs-block__form-title fade" data-category="tab-delivery">Доставка</h3>
               <div class="input-wrapper input-wrapper--radio-group">
@@ -67,15 +67,15 @@
                 <div class="map"></div>
               </div>
               <div class="tabs-block__form-info" data-category="tab-delivery">
-                <div class="input-wrapper input-wrapper--error input-wrapper--input">
+                <div class="input-wrapper input-wrapper--input">
                   <h4>Адрес</h4>
-                  <input id="delivery-user-adress" type="text" required />
+                  <input id="delivery-user-adress" type="text" name="address" required />
                   <label for="delivery-user-adress" aria-label="Укажите адрес"></label>
                   <div class="input-wrapper__error">Укажите адрес</div>
                 </div>
-                <div class="input-wrapper input-wrapper--success input-wrapper--input">
+                <div class="input-wrapper input-wrapper--input">
                   <h4>Дата доставки</h4>
-                  <input id="delivery-user-date-delivery" type="text" required />
+                  <input id="delivery-user-date-delivery" type="text" name="date-delivery" required />
                   <label for="delivery-user-date-delivery" aria-label="Укажите дату доставки"></label>
                   <div class="input-wrapper__error">Укажите дату доставки</div>
                 </div>
@@ -110,28 +110,29 @@
                 <input id="pick-up-cash" type="radio" name="payment-method" value="cash" />
                 <label for="pick-up-cash">Наличные</label>
               </div>
-              <div class="input-wrapper input-wrapper--error input-wrapper--input-group js-card-input">
+              <div class="input-wrapper input-wrapper--input-group js-card-input">
                 <h4>Номер карты</h4>
-                <input id="pick-up-user-card-1-4" type="text" required />
-                <label for="pick-up-user-card-1-4" aria-label="Первые четыре цифр с карты"></label>
-                <input id="pick-up-user-card-5-8" type="text" required />
-                <label for="pick-up-user-card-5-8" aria-label="Вторые четыре цифр с карты"></label>
-                <input id="pick-up-user-card-9-12" type="text" required />
-                <label for="pick-up-user-card-9-12" aria-label="Третьи четыре цифр с карты"></label>
-                <input id="pick-up-user-card-13-16" type="text" required />
-                <label for="pick-up-user-card-13-16" aria-label="Четвёртые четыре цифр с карты"></label>
+                <input type="hidden" name="credit-card" value="">
+                <input id="card-1-4" class="credit-card-part" type="text" name="credit-card-part" maxlength="4" required />
+                <label for="card-1-4" aria-label="Первые четыре цифр с карты"></label>
+                <input id="card-5-8" class="credit-card-part" type="text" name="credit-card-part" maxlength="4" required />
+                <label for="card-5-8" aria-label="Вторые четыре цифр с карты"></label>
+                <input id="card-9-12" class="credit-card-part" type="text" name="credit-card-part" maxlength="4" required />
+                <label for="card-9-12" aria-label="Третьи четыре цифр с карты"></label>
+                <input id="card-13-16" class="credit-card-part" type="text" name="credit-card-part" maxlength="4" required />
+                <label for="card-13-16" aria-label="Четвёртые четыре цифр с карты"></label>
                 <div class="input-wrapper__error">Введите верный номер карты</div>
               </div>
               <div class="input-wrapper input-wrapper--input">
                 <h4>Номер телефона</h4>
-                <input id="pick-up-user-phone" type="text" placeholder="+7 (" required/>
+                <input id="pick-up-user-phone" name="phone" type="text" placeholder="+7 (" required/>
                 <label for="pick-up-user-phone" aria-label="Укажите телефон"></label>
                 <div class="input-wrapper__error">Укажите телефон</div>
               </div>
               <span class="form__info fade -active" data-category="tab-pick-up">Товар на складе будет привязан к номеру телефона. В пункте выдачи назовите номер телефона, чтобы получить ваш заказ.</span>
               <span class="form__info fade" data-category="tab-delivery">Курьер позвонит на указанный номер за час до доставки заказа.</span>
               <div class="form__submit-block">
-                <button class="form__submit-btn" type="submit" disabled>Заказать</button>
+                <button class="form__submit-btn" type="submit" >Заказать</button>
                 <div class="form__submit-state">
                   <p class="form__submit-header">
                     Осталось заполнить:
@@ -144,9 +145,11 @@
         </div>
       </main>
     </div>
+    <script src="./js/validate.js"></script>
     <script src="./js/backend.js"></script>
     <script src="./js/utils.js"></script>
     <script src="./js/address.js"></script>
+    <script src="./js/form.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

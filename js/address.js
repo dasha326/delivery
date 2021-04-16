@@ -12,23 +12,26 @@ const newAddressGroupWrapper = document.querySelector('.address-group-wrapper');
         cityInput.checked = place === 0;
 
         const cityLabel = cityTemplate.querySelector('label').cloneNode(true);
-        cityLabel.for = `city-${cityId}`;
+        cityLabel.htmlFor = `city-${cityId}`;
         cityLabel.textContent = city;
 
+        cityInput.addEventListener('change', function(){
+           const thisId = this.id;
+           console.log(567);
+           window.changeAddress(thisId);
+        });
         newCityGroupWrapper.appendChild(cityInput);
         newCityGroupWrapper.appendChild(cityLabel);
     };
 })();
 
 // Address
-(function () {
+(function() {
     const addressTemplate = document.querySelector('#address-group').content;
     window.createAddress = function (cord, address, cityId, addressId, lastAddressId, place) {
         const newAddressGroup = addressTemplate.querySelector('.address-group').cloneNode(true);
-        console.log(newAddressGroup);
         newAddressGroup.dataset.city = `city-${cityId}`;
         newAddressGroup.classList.add(place === 0 ? '-visible': '-hide');
-        console.log(addressId, lastAddressId);
         if (addressId === 0) {
             newAddressGroup.classList.add('-first');
         }
@@ -49,4 +52,15 @@ const newAddressGroupWrapper = document.querySelector('.address-group-wrapper');
         newAddressGroup.appendChild(addressLabel);
         newAddressGroupWrapper.appendChild(newAddressGroup);
     };
+})();
+
+(function() {
+    window.changeAddress = function(btnId){
+        console.log(123);
+        const elements = document.querySelectorAll('[data-city]');
+        elements.forEach(function(element) {
+            const elementId = element.dataset.city;
+            window.util.activeClassHandlerByDataset(element, btnId, elementId, '-visible', '-hiden');
+        })
+    }
 })();
